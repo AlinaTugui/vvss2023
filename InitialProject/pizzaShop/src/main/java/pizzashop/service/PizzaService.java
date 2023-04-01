@@ -22,11 +22,14 @@ public class PizzaService {
 
     public List<Payment> getPayments(){return payRepo.getAll(); }
 
-    public void addPayment(int table, PaymentType type, double amount){
-        Payment payment= new Payment(table, type, amount);
-        payRepo.add(payment);
+    public void addPayment(int table, PaymentType type, double amount) throws Exception {
+        Payment payment = new Payment(table, type, amount);
+        if (payment.getTableNumber() >= 1 && payment.getTableNumber() <= 8 && payment.getAmount() > 0) {
+            payRepo.add(payment);
+        } else {
+            throw new Exception("Nr mesei trebuie sa fie cuprins intre 1 si 8, tipul platii trebuie sa fie CASH/CARD, valoarea trebuie sa fie pozitiva");
+        }
     }
-
     public double getTotalAmount(PaymentType type){
         double total=0.0f;
         List<Payment> l=getPayments();

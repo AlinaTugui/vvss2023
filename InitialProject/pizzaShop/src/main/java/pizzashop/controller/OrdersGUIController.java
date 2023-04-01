@@ -81,7 +81,7 @@ public class OrdersGUIController {
             orderList= menuData.stream()
                     .filter(x -> x.getQuantity()>0)
                     .map(menuDataModel -> menuDataModel.getQuantity() +" "+ menuDataModel.getMenuItem())
-                    .collect(Collectors.toList());
+                    .toList();
             observableList = FXCollections.observableList(orderList);
             KitchenGUIController.order.add("Table" + tableNumber +" "+ orderList.toString());
             orderStatus.setText("Order placed at: " +  now.get(Calendar.HOUR)+":"+now.get(Calendar.MINUTE));
@@ -104,7 +104,11 @@ public class OrdersGUIController {
             System.out.println("Total: " + getTotalAmount());
             System.out.println("--------------------------");
             PaymentAlert pay = new PaymentAlert(service);
-            pay.showPaymentAlert(tableNumber, getTotalAmount());
+            try {
+                pay.showPaymentAlert(tableNumber, getTotalAmount());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 

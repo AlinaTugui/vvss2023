@@ -74,4 +74,18 @@ public class PaymentRepository {
         }
     }
 
+    public void deleteFileContent(){
+        File file = new File(filename);
+
+        BufferedWriter bw = null;
+        try {
+            bw = new BufferedWriter(new FileWriter(file));
+            bw.write("");
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
