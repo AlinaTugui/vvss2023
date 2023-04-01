@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Prj237 - tmir3031_BBT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Prj237<br/>Test Suite: Prj237 - tmir3031_BBT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 01/04/2023</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.tmir3031_BBT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc17937">237-22: tmir3031_ECP_Valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc17939">237-23: tmir3031_ECP_Invalid</a></p><p style="padding-left: 45px;"><a href="#toc_tc17941">237-24: tmir3031_BVA_Valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc17943">237-25: tmir3031_BVA_Invalid</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Testing Project for group 237</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : tmir3031_BBT</h1>
+<a name="toc_tc17937"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case 237-22: tmir3031_ECP_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tmir3031</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se testeaza inregistrarea unei plati, ce contine numarul mesei, tipul platii si valoarea care sunt&nbsp;valide. Plata se adauga in fisier</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>numar masa: [1,8] int</p>
+
+<p>tipul platii: { CASH / CARD }</p>
+
+<p>valoare: &gt;0&nbsp;double</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc17939"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case 237-23: tmir3031_ECP_Invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tmir3031</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se testeaza inregistrarea unei plati, ce contine numarul mesei, tipul platii si valoarea care sunt invalide. Plata se adauga in fisier</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>numar masa: not in [1,8], not int</p>
+
+<p>tipul platii: not in { CASH / CARD }</p>
+
+<p>valoare: &lt;=0, not double</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc17941"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case 237-24: tmir3031_BVA_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tmir3031</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se testeaza inregistrarea unei plati, ce contine numarul mesei, tipul platii si valoarea care sunt valide. Plata se adauga in fisier</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>numar masa: 1</p>
+
+<p>tipul platii: CASH&nbsp;</p>
+
+<p>valoare: 200</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc17943"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case 237-25: tmir3031_BVA_Invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">tmir3031</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se testeaza inregistrarea unei plati, ce contine numarul mesei, tipul platii si valoarea care sunt invalide. Plata se adauga in fisier</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>numar masa: 26</p>
+
+<p>tipul platii: AAAA</p>
+
+<p>valoare: -100</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>
