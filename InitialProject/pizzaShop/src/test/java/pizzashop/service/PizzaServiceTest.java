@@ -7,9 +7,12 @@ import pizzashop.model.PaymentType;
 import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PizzaServiceTest {
     private PaymentRepository payRepo;
@@ -139,6 +142,52 @@ class PizzaServiceTest {
         } catch (Exception e) {
             assert e.getMessage().equals("Nr mesei trebuie sa fie cuprins intre 1 si 8, tipul platii trebuie sa fie CASH/CARD, valoarea trebuie sa fie pozitiva");
         }
+    }
+
+    //Lab3
+    @Test
+    void getTotalAmountValid_1() throws IOException {
+        PaymentType paymentType = PaymentType.Cash;
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("data/payments.txt"));
+        bufferedWriter.write("0,Cash,10.0\n");
+        bufferedWriter.write("1,Card,10.0\n");
+        bufferedWriter.write("3,Cash,12.0\n");
+        bufferedWriter.write("2,Card,100.0\n");
+        bufferedWriter.close();
+        setUp();
+
+        assertEquals(22.0, service.getTotalAmount(paymentType));
+    }
+
+    @Test
+    void getTotalAmountValid_2() throws IOException {
+        PaymentType paymentType = PaymentType.Cash;
+        setUp();
+
+        assertEquals(0.0, service.getTotalAmount(paymentType));
+    }
+
+    @Test
+    void getTotalAmountValid_3() throws IOException {
+        PaymentType paymentType = PaymentType.Cash;
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("data/payments.txt"));
+        bufferedWriter.write("1,Card,10.0\n");
+        bufferedWriter.write("2,Card,100.0\n");
+        bufferedWriter.close();
+        setUp();
+
+        assertEquals(0.0, service.getTotalAmount(paymentType));
+    }
+
+    @Test
+    void getTotalAmountInvalid() throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("data/payments.txt"));
+        bufferedWriter.write("1,Cash,10.0\n");
+        bufferedWriter.write("2,Cash,100.0\n");
+        bufferedWriter.close();
+        setUp();
+
+        assertThrows(IllegalArgumentException.class, () -> service.getTotalAmount(PaymentType.valueOf("cash")));
     }
 
 }

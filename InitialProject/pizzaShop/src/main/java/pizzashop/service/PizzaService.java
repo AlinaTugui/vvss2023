@@ -30,13 +30,16 @@ public class PizzaService {
             throw new Exception("Nr mesei trebuie sa fie cuprins intre 1 si 8, tipul platii trebuie sa fie CASH/CARD, valoarea trebuie sa fie pozitiva");
         }
     }
-    public double getTotalAmount(PaymentType type){
-        double total=0.0f;
-        List<Payment> l=getPayments();
-        if ((l==null) ||(l.size()==0)) return total;
-        for (Payment p:l){
-            if (p.getType().equals(type))
-                total+=p.getAmount();
+    public double getTotalAmount(PaymentType type) {
+        double total = 0.0f;
+        List<Payment> list = getPayments();
+        if (list == null)
+            return total;
+        if (list.isEmpty())
+            return total;
+        for (Payment payment : list) {
+            if (payment.getType().equals(type))
+                total += payment.getAmount();
         }
         return total;
     }
